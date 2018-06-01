@@ -9,35 +9,35 @@ In this section, attendees will use Ansible to integrate with Cisco VIM
 
 		ssh 10.201.241.229 -l {user-id} 
 
-Below is an example of "***user1***" initating successful ssh to Management node:
+Below is an example of "***user2***" initating successful ssh to Management node:
 
-	FCHAUDHR-M-P0EL:config faisalc$ ssh 10.201.241.229 -l user1
-	user1@10.201.241.229's password:
+	FCHAUDHR-M-P0EL:config faisalc$ ssh 10.201.241.229 -l user2
+	user2@10.201.241.229's password:
 	Last login: Sun May 27 07:18:37 2018 from 10.60.164.55
-	(venv)[user1@rcdn-nfvi-mgmt-03 ~]$
+	(venv)[user2@rcdn-nfvi-mgmt-03 ~]$
 
 ## Step 2: Verify virtual-environment
 
 Once you successfully SSH into Management node, verify:
 
-* You are in the virtual-environment named `venv` as shown below. **Note:** below shows an example for "user1":
+* You are in the virtual-environment named `venv` as shown below. **Note:** below shows an example for "user2":
 
-		(venv)[user1@rcdn-nfvi-mgmt-03 ~]$
+		(venv)[user2@rcdn-nfvi-mgmt-03 ~]$
 
-* Verify that environment variables related to your user by issuing `env | grep -i OS` command.  Below example shows environment variables for user1, your respective user (1, 2, ... 8) will have appropriate OS_USERNAME and OS_TENANT_NAME:
+* Verify that environment variables related to your user by issuing `env | grep -i OS` command.  Below example shows environment variables for user2, your respective user (1, 2, ... 8) will have appropriate OS_USERNAME and OS_TENANT_NAME:
 
-		(venv)[user1@rcdn-nfvi-mgmt-03 ~]$ env | grep -i OS
+		(venv)[user2@rcdn-nfvi-mgmt-03 ~]$ env | grep -i OS
 		HOSTNAME=rcdn-nfvi-mgmt-03
 		OS_REGION_NAME=RegionOne
 		OS_PASSWORD=D_JmKC6o_wU23OYf
 		OS_AUTH_URL=http://10.201.241.227:5000/v2.0
-		OS_USERNAME=user1
-		OS_TENANT_NAME=tenant1
-		(venv)[user1@rcdn-nfvi-mgmt-03 ~]$
+		OS_USERNAME=user2
+		OS_TENANT_NAME=tenant2
+		(venv)[user2@rcdn-nfvi-mgmt-03 ~]$
 
 *  Switch to correct directory by issuing `cd /ciscolive/working` command as shown below:
 
-		(venv)[user1@rcdn-nfvi-mgmt-03 ~]$ cd /ciscolive/working/
+		(venv)[user2@rcdn-nfvi-mgmt-03 ~]$ cd /ciscolive/working/
 
 You may view the ansible playbooks (.yml files) by using `less` or `more` command.  
 
