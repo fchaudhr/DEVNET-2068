@@ -24,7 +24,7 @@ Once you successfully SSH into Management node, verify:
 
 		(venv)[user2@rcdn-nfvi-mgmt-03 ~]$
 
-* Verify that environment variables related to your user by issuing `env | grep -i OS` command.  Below example shows environment variables for user2, your respective user (1, 2, ... 8) will have appropriate OS_USERNAME and OS_TENANT_NAME:
+* Verify that environment variables related to your user by issuing **`env | grep -i OS`** command.  Below example shows environment variables for user2, your respective user (1, 2, ... 8) will have appropriate OS_USERNAME and OS_TENANT_NAME:
 
 		(venv)[user2@rcdn-nfvi-mgmt-03 ~]$ env | grep -i OS
 		HOSTNAME=rcdn-nfvi-mgmt-03
@@ -35,18 +35,17 @@ Once you successfully SSH into Management node, verify:
 		OS_TENANT_NAME=tenant2
 		(venv)[user2@rcdn-nfvi-mgmt-03 ~]$
 
-*  Switch to correct directory by issuing `cd /ciscolive/working` command as shown below:
+*  Switch to correct directory by issuing **`cd /ciscolive/working`** command as shown below:
 
 		(venv)[user2@rcdn-nfvi-mgmt-03 ~]$ cd /ciscolive/working/
 
-You may view the ansible playbooks (.yml files) by using `less` or `more` command.  
+**NOTE: Do not modify any of files.**  You may view the ansible playbooks or related files by using `less` or `more` command.  
 
-**NOTE: Do not modify any of YAML files** 
 
 
 ## Step 3: Run Ansible module to create Flavor 
 
-*  Verify that no flavor for your respective tenant/project exists on Cisco VIM by issuing below command:
+*  Verify that no flavor for your respective tenant/project exists on Cisco VIM by issuing **`nova flavor-list`** command as shown below:
 		
 		(venv)[user2@rcdn-nfvi-mgmt-03 working]$ nova flavor-list
 		+--------------------------------------+------------+-----------+------+-----------+------+-------+-------------+-----------+
@@ -56,7 +55,7 @@ You may view the ansible playbooks (.yml files) by using `less` or `more` comman
 		+--------------------------------------+------------+-----------+------+-----------+------+-------+-------------+-----------+
 		(venv)[user2@rcdn-nfvi-mgmt-03 working]$ 
 
-* Run your first ansible playbook to create a nova flavor in your respective project/tenant on CVIM by issuing `ansible-playbook 7.flavor.yml` command as shown below:
+* Run your first ansible playbook to create a nova flavor in your respective project/tenant on CVIM by issuing **`ansible-playbook 7.flavor.yml`** command as shown below:
 
 		(venv)[user2@rcdn-nfvi-mgmt-03 working]$ ansible-playbook 7.flavor.yml
 		
@@ -71,7 +70,7 @@ You may view the ansible playbooks (.yml files) by using `less` or `more` comman
 		(venv)[user2@rcdn-nfvi-mgmt-03 working]$
 		
 
-* Verify that flavor is created by issuing `nova flavor-list` command:
+* Verify that flavor is created by issuing **`nova flavor-list`** command:
 
 		(venv)[user2@rcdn-nfvi-mgmt-03 working]$ nova flavor-list
 		+--------------------------------------+------------+-----------+------+-----------+------+-------+-------------+-----------+
@@ -86,7 +85,7 @@ You may view the ansible playbooks (.yml files) by using `less` or `more` comman
 
 
 
-* Run ansible playbook to create a neutron network in your respective project/tenant on CVIM by issuing `ansible-playbook 7.network.yml` command as shown below:
+* Run ansible playbook to create a neutron network in your respective project/tenant on CVIM by issuing **`ansible-playbook 7.network.yml`** command as shown below:
 
 		(venv)[user2@rcdn-nfvi-mgmt-03 working]$ ansible-playbook 7.network.yml
 		
@@ -100,11 +99,11 @@ You may view the ansible playbooks (.yml files) by using `less` or `more` comman
 		
 		(venv)[user2@rcdn-nfvi-mgmt-03 working]$ 
 
-*  Verify that the network is created by issuing `neutron net-list` command
+*  Verify that the network is created by issuing **`neutron net-list`** command
 
 ## Step 5: Run Ansible module to create Neutron subnet
 
-* Run ansible playbook to create a neutron network in your respective project/tenant on CVIM by issuing `ansible-playbook 7.subnet.yml` command as shown below: 
+* Run ansible playbook to create a neutron network in your respective project/tenant on CVIM by issuing **`ansible-playbook 7.subnet.yml`** command as shown below: 
 
 		(venv)[user2@rcdn-nfvi-mgmt-03 working]$ ansible-playbook 7.subnet.yml
 		
@@ -154,12 +153,12 @@ You may view the ansible playbooks (.yml files) by using `less` or `more` comman
 		(venv)[user2@rcdn-nfvi-mgmt-03 working]$ 
 
 
-*  Verify that the network is created by issuing `neutron subnet-list` command:
+*  Verify that the network is created by issuing **`neutron subnet-list`** command:
 
 
 ## Step 5: Run Ansible module to create an Instance (VM)
 
-* Run ansible playbook to create an instance (i.e. a Virtual Machine/VM) in your respective project/tenant on CVIM by issuing `ansible-playbook 7.instance.yml` command as shown below: 
+* Run ansible playbook to create an instance (i.e. a Virtual Machine/VM) in your respective project/tenant on CVIM by issuing **`ansible-playbook 7.instance.yml`** command as shown below: 
 
 		(venv)[user2@rcdn-nfvi-mgmt-03 working]$ ansible-playbook 7.instance.yml
 		
@@ -174,7 +173,7 @@ You may view the ansible playbooks (.yml files) by using `less` or `more` comman
 		(venv)[user2@rcdn-nfvi-mgmt-03 working]$ 
 
 
-*  Verify that instance is created by issuing `nova list` command as shown below:
+*  Verify that instance is created by issuing **`nova list`** command as shown below:
 
 		(venv)[user2@rcdn-nfvi-mgmt-03 working]$ nova list
 		+--------------------------------------+-----------------+--------+------------+-------------+----------------------------+
