@@ -61,11 +61,11 @@ Once you successfully SSH into Management node, verify:
 
 *  Switch to correct directory by issuing below command:
 
- **`cd /ciscolive/working`**
+ **`cd /ciscolive`**
 
 	The output of above command is shown below: 
 
-		(venv)[user2@rcdn-nfvi-mgmt-03 ~]$ cd /ciscolive/working/
+		(venv)[user2@rcdn-nfvi-mgmt-03 ~]$ cd /ciscolive/
 
 **NOTE: Do not modify any of files.**  You may view the ansible playbooks or related files by using `less` or `more` command.  
 
@@ -265,6 +265,6 @@ localhost                  : ok=3    changed=3    unreachable=0    failed=0
 ~~~
 
 ---
-Congrats: you have successfully finished running Ansible modules with Cisco VIM (CVIM)!
+**Congrats**: you have successfully finished running Ansible modules with Cisco VIM (CVIM)!
 
 
