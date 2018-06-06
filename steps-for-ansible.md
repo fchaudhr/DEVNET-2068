@@ -4,18 +4,18 @@ In this section, attendees will use Ansible to integrate with Cisco VIM
 
 ## Summary of steps:
 
-Login: **`ssh 10.201.241.229 -l {user-id}`**  
-Verify: **`env | grep -i OS`** 	 
-change directory: **`cd /ciscolive`**   
-Verify existing flavor: **`nova flavor-list`**   
-Create network: **`ansible-playbook network.yml`**   
-Verify network: **`neutron net-list`**    
-Create subnet: **`ansible-playbook subnet.yml`**    
-Verify subnet: **`neutron subnet-list`**  
-Create Instance: **`ansible-playbook instance.yml`**  
-Verify Instance: **`nova list`**   
+* Login: **`ssh 10.201.241.229 -l {user-id}`**  
+* Verify environment variables: **`env | grep -i OS`**  
+* Change directory: **`cd /ciscolive`**   
+* Verify existing flavor: **`nova flavor-list`**   
+* Create network: **`ansible-playbook network.yml`**   
+* Verify network: **`neutron net-list`**    
+* Create subnet: **`ansible-playbook subnet.yml`**    
+* Verify subnet: **`neutron subnet-list`**  
+* Create Instance: **`ansible-playbook instance.yml`**  
+* Verify Instance: **`nova list`**   
 
-Delete instance, subnet and network: **`ansible-playbook all.delete.yml`** 
+* Delete instance, subnet and network: **`ansible-playbook all.delete.yml`** 
 
 
 ---
