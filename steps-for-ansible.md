@@ -108,6 +108,14 @@ changed: [localhost]
 PLAY RECAP *********************************************************************
 localhost                  : ok=1    changed=1    unreachable=0    failed=0
 
+~~~
+
+*  Verify that a network named **"ext\_net\_{user}"** is created for your respective user (user1, user2 ..) by issuing below command  
+   **`neutron net-list`** 
+
+* Below example shows this for user2
+
+~~~
 (venv)[user2@rcdn-nfvi-mgmt-03 ciscolive]$ neutron net-list
 +--------------------------------------+---------------+-----------------------------------------+
 | id                                   | name          | subnets                                 |
@@ -116,12 +124,8 @@ localhost                  : ok=1    changed=1    unreachable=0    failed=0
 |                                      |               | 10.201.241.96/27                        |
 | fa1b2aa4-abd3-40e2-a884-19c839ea2c15 | ext_net_user2 |                                         |
 +--------------------------------------+---------------+-----------------------------------------+
-(venv)[user2@rcdn-nfvi-mgmt-03 ciscolive]$ neutron subnet-list
-
+(venv)[user2@rcdn-nfvi-mgmt-03 ciscolive]$
 ~~~
-
-*  Verify that the network is created by issuing below command   **`neutron net-list`** 
-
 
 ---
 ## Step 5: Run Ansible module to create Neutron subnet
@@ -188,7 +192,7 @@ localhost                  : ok=4    changed=1    unreachable=0    failed=0
 ~~~
 
 
-*  Verify that the network is created by issuing below command:
+*  Verify that the subnet named **"subnet192\_{user}"** is created for your respective user (user1, user2 ..) by issuing below command
 
  **`neutron subnet-list`** 
 
@@ -219,18 +223,18 @@ localhost                  : ok=1    changed=1    unreachable=0    failed=0
 ~~~
 
 
-*  Verify that instance is created by issuing below command:
+*  Verify that instance named **"webserver\_{user}"** for your respective user account (user1, user2 ...) is created by issuing below command:
 
  **`nova list`** 
 
- The output of above command is shown below:
+ The output of above command is shown below for user2:
 
 
 		(venv)[user2@rcdn-nfvi-mgmt-03 working]$ nova list
 		+--------------------------------------+-----------------+--------+------------+-------------+----------------------------+
 		| ID                                   | Name            | Status | Task State | Power State | Networks                   |
 		+--------------------------------------+-----------------+--------+------------+-------------+----------------------------+
-		| d29a64f0-6ac1-4aca-80f1-5fa44bcfa668 | webserver_user2 | ACTIVE | -          | Running     | ext_net_user2=192.168.30.9 |
+		| d29a64f0-6ac1-4aca-80f1-5fa44bcfa668 | webserver_user2 | ACTIVE | -          | Running     | ext_net_user2=192.168.22.9 |
 		+--------------------------------------+-----------------+--------+------------+-------------+----------------------------+
 		(venv)[user2@rcdn-nfvi-mgmt-03 working]$
 
@@ -260,7 +264,7 @@ changed: [localhost]
 PLAY RECAP *********************************************************************
 localhost                  : ok=3    changed=3    unreachable=0    failed=0
 
-(venv)[user2@rcdn-nfvi-mgmt-03 ciscolive]$ nova flavor-list
+(venv)[user2@rcdn-nfvi-mgmt-03 ciscolive]$
 
 ~~~
 
