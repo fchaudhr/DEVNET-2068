@@ -66,7 +66,7 @@ Append "" to the URL in Exercise#1 and send the GET request again.
 * Copy the setup data from the HTTP response and edit the json format so that it looks like:  
 `{      "jsondata": {.. .. ..} }`
 
-**Tip:** 
+	**Tip:** 
 
 * Change  
 `"jsondata": "{ \"external_lb_vip_address\": \"172.29.86.9\"`  
@@ -94,7 +94,7 @@ So you:
 	{  
 	"jsondata": {.. .. ..}  
 	}
-~~~
+	~~~
 
 * Click `Send` on Postman
 * Note down the **UUID** in the **Response**
