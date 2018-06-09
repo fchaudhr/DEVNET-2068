@@ -4,10 +4,9 @@ In this section, attendees will use Ansible to integrate with Cisco VIM
 
 ## Summary of steps:
 
-* Login: **`ssh 10.201.241.229 -l {user-id}`**  
+* Login to CVIM Management node: **`ssh 10.201.241.229 -l {user-id}`**  
 * Verify environment variables: **`env | grep -i OS`**  
 * Change directory: **`cd /ciscolive`**   
-* Verify existing flavor: **`nova flavor-list`**   
 * Create network: **`ansible-playbook network.yml`**   
 * Verify network: **`neutron net-list`**    
 * Create subnet: **`ansible-playbook subnet.yml`**    
@@ -22,9 +21,9 @@ In this section, attendees will use Ansible to integrate with Cisco VIM
 # Detailed steps:
 
 
-## Step 1: SSH to Build node
+## Step 1: SSH to CVIM Management node
 
-* From your PC initiate a SSH connection to Management/Build node. **Note:** The speakers will provide the credentials i.e. {user-id} and password for the SSH connection.
+* From your PC initiate a SSH connection to Management/Build node. You may use terminal window on Mac.  **Note:** The speakers will provide the credentials i.e. {user-id} and password for the SSH connection.
 
 	**`ssh 10.201.241.229 -l {user-id}`** 
 
@@ -89,7 +88,7 @@ Once you successfully SSH into Management node, verify:
 
 				
 ---
-## Step 4: Run Ansible module to create network
+## Step 4: Run Ansible playbook to create network
 
 * Run ansible playbook to create a neutron network in your respective project/tenant on CVIM by issuing:
   
@@ -128,7 +127,7 @@ localhost                  : ok=1    changed=1    unreachable=0    failed=0
 ~~~
 
 ---
-## Step 5: Run Ansible module to create Neutron subnet
+## Step 5: Run Ansible playbook to create Neutron subnet
 
 * Run ansible playbook to create a neutron network in your respective project/tenant on CVIM by issuing below command:
 
@@ -198,7 +197,7 @@ localhost                  : ok=4    changed=1    unreachable=0    failed=0
 
 
 ---
-## Step 6: Run Ansible module to create an Instance (VM)
+## Step 6: Run Ansible playbook to create an Instance (VM)
 
 * Run ansible playbook to create an instance (i.e. a Virtual Machine/VM) in your respective project/tenant on CVIM by issuing below command:
 
